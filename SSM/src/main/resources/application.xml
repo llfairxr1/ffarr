@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+     xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation=
+    	"http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd
+        ">
+      <util:properties id="redis" location="classpath:redis.properties"></util:properties>
+    	<!--  扫描包  -->
+    	<context:component-scan base-package="com.ff" />
+    	<!--  数据源 -->
+    	<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+    		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+    		<property name="url" value="jdbc:mysql:///crm"></property>
+    		<property name="username" value="root"></property>
+    		<property name="password" value="123456"></property>
+    	</bean>
+     	
+     <bean id="redisPool" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="#{redis.maxIdle}"></property>
+		<property name="maxTotal" value="#{redis.MaxTotal}"></property>
+	</bean>
+	
+	<bean id="jedisConnection" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="hostName" value="#{redis.host}"></property>
+		<property name="port" value="#{redis.port}"></property>
+		<property name="password" value="#{redis.password}"></property>
+		<property name="poolConfig" ref="redisPool"></property>
+	</bean>
+     	
+     	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+     		<property name="dataSource" ref="datasource"></property>
+     		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+     		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+     	</bean>
+    	
+    	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    		<property name="basePackage" value="com.ff.mapper"></property>
+    		<property name="sqlSessionFactory" ref="sessionFactory"></property>
+    	</bean>
+ </beans>
