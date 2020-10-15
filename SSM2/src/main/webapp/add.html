@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+    type="text/css"
+  />
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"
+/>
+
+<style type="text/css">
+body{
+  background-color: rgb(223, 233, 243);
+}
+.a{
+  position: absolute;
+  top: 20px;
+  left:20px;
+  background-color: white;
+ width: 1600px;
+ height: 830px;
+}
+.table{
+  width: 1560px;
+  position:absolute;
+  top: 50px;
+  left: 20px;
+  height: 680px;
+  
+}
+textarea{
+  resize: none;
+  width: 1350px;
+  height: 100px;
+  color: rgb(121, 121, 121);
+}
+h4{
+  position:relative;
+  left: 15px;
+  top: 10px;
+  
+
+}
+.e{
+  text-align:center;
+ 
+}
+.d{
+  width: 650px;
+  height: 30px;
+}
+#m{
+  position: absolute;
+  left: 700px;
+  top: 780px;
+}
+#n{
+  position: absolute;
+  left: 780px;
+  top: 780px;
+}
+#aaa{
+  position: relative;
+  left: 720px;
+  top: 780px;
+  width:30px;
+  height:20px;
+}
+
+
+</style>
+</head>
+<body>
+ <form action="user">
+<div class="a">
+  <h4>新增用户</h4>
+ 
+    <table class="table table-bordered">
+      <tr>
+          <td class="e">用户名</td>
+          <td><input type="text" name="username" placeholder="请输入用户名"></td>
+          <td class="e">密码</td>
+          <td><input type="password" name="password" placeholder="请输入密码"></td>
+      </tr>
+      <tr>
+        <td class="e">部门</td>
+        <td>
+          <select name="department_name">
+          <option value="教学部">教学部</option>
+          <option value="体育部">体育部</option>
+          <option value="检查部">检查部</option>
+          <option value="学生部">学生部</option>
+        </select>
+      </td>
+        <td class="e">角色</td>
+        <td>  <select name="role_name">
+          <option value="教学主任">教学主任</option>
+          <option value="体育老师">体育老师</option>
+          <option value="检查老师">检查老师</option>
+          <option>学生会长</option>
+        </select></td>
+	</tr>
+	
+	
+	 <tr>
+        <td class="e">是否是管理员</td>
+        <td>
+          <select name="is_admin">
+          <option value="1">是</option>
+          <option value="2">否</option>
+           </select>
+        </td>
+        <td class="e">添加时间</td>
+        <td><input type="datetime" name="create_time"></td>
+	</tr>
+	
+	
+	
+    <tr>
+      <td class="e">用户名</td>
+      <td>女<input type="radio" name="is_male" value="女" />
+                             男<input type="radio" name="is_male" value="男"/><br></td>
+      <td class="e">手机号</td>
+      <td><input type="text" name="mobile" placeholder="请输入手机号"></td>
+
+
+  </tr>
+  <tr>
+    <td class="e">地址</td>
+    <td><input class="d" type="text" name="address" placeholder="请填写地址"></td>
+    <td class="e">年龄</td>
+    <td><input type="text" name="age" placeholder="请填写年龄"></td>
+
+
+</tr>
+<tr>
+  <td class="e">固定电话</td>
+  <td><input type="text" name="tel" placeholder="请填写固定电话"></td>
+  <td class="e">身份证号</td>
+  <td><input class="d" type="text" name="id_num" placeholder="请填写身份证号"></td>
+
+
+</tr>
+<tr>
+  <td class="e">电子邮箱</td>
+  <td><input type="email" name="email" placeholder="请填写电子邮箱"></td>
+  <td></td> 
+  <td><input type="hidden" name="n" value="add"></td>
+
+
+</tr>
+<tr>
+  <td class="e">爱好</td>
+  <td><input type="text" name="hobby" placeholder="请填写爱好"></td>
+  <td class="e">学历</td>
+  <td><select name="education">
+    <option value="1">小学</option>
+    <option value="2">初中</option>
+    <option value="3">高中</option>
+    <option value="4">大学</option>
+  </select></td>
+</tr>
+<tr>
+  <td class="e">工资卡号</td>
+  <td><input type="text" name="card_num" placeholder="请填写工资卡号"></td>
+  <td class="e">民族</td>
+  <td><input type="text" name="nation" placeholder="请填写民族"></td>
+</tr>
+<tr>
+  <td class="e">婚姻状况</td>
+  <td><select name="marry">
+    <option value="-1">离异</option>
+    <option value="0">未婚</option>
+    <option value="1">已婚</option>
+  </select></td>
+    <td class="e">用户状态</td>
+    <td><select name="status">
+    <option value="-1">已禁用</option>
+    <option value="2">正常</option>
+    <option value="1">已创建</option>
+  </select></td>
+  <td></td>
+</tr>
+<tr>
+  <td class="e" >备注</td>
+  <td colspan="3">  <textarea name="remark" cols="200px" rows="6px" placeholder="请填写备注" ></textarea></td>
+</tr>
+</table>
+</div>
+    <div id="aaa">
+    
+    <input type="submit"  value="提交">
+     </div>
+   </form>
+   <a href="user?n=show"  id="n"><button>返回</button></a>
+    
+</body>
+</html>

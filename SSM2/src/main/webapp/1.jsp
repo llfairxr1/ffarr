@@ -1,0 +1,161 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>智游客户关系管理系统 - 后台管理</title>
+	<link rel="stylesheet" href="css/admin.css">
+	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+	<style type="text/css">
+	.admin-img{
+	width: 100%;
+	height: 100%;
+	}
+	</style>
+</head>
+<body>
+<div class="header">
+	<h1><a href="#">智游客户关系管理系统</a></h1>
+	<!--<div class="nav">
+		<a target="right" href="#">工作台</a>
+		<a target="right" href="#">报表</a>
+		<a target="right" href="#">客户信息</a>
+		<a target="right" href="#">员工信息</a>
+		<a target="right" href="#">公告信息</a>
+		<a target="right" href="#">发件箱</a>
+	</div>-->
+	<div class="user">
+		<a href="#">${USER.username}</a>
+		<a href="user?n=exit">退出</a>
+	</div>
+</div>
+<div class="main">
+	<ul class="left-side">
+		<li class="menu-title active">
+			<a href="z1.html"  target="pageBox">
+				<i class=" fa fa-users"></i>&nbsp;&nbsp;客户管理
+			</a>
+		</li>
+		<li class="sub-menu">
+			<ul>
+				<li class="active">
+					<a href="customer?cn=show"  target="pageBox">
+						<i class=" fa fa-star-o"></i>&nbsp;&nbsp;客户信息
+					</a>
+				</li>
+				
+				<li class="active">
+					<a href="customer_state?cn=show"  target="pageBox">
+						<i class=" fa fa-star-o"></i>&nbsp;&nbsp;客户状态
+					</a>
+				</li>
+				<li>
+					<a href="customer_source?cn=show"  target="pageBox">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;客户来源
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="customer_category?cn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;客户分类
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="customer_care?cn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;客户关怀
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="customer_link?cn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;客户联系
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="customer_link_record?cn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;联系纪录
+					</a>
+				</li>
+
+			</ul>
+		</li>
+		
+		<li class="menu-title">
+			<a href="#" >
+				<i class=" fa fa-sitemap"></i>&nbsp;&nbsp;站内邮件
+			</a>
+		</li>
+		<li class="sub-menu">
+			<ul>
+				<li>
+					<a target="pageBox" href="email_get?e=fa">
+						<i class=" fa fa-star-o"></i>&nbsp;&nbsp;写邮件
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="email_get?e=get">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;收邮件
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="email_get?e=get2">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;发件箱
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="email_get2?e=get">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;草稿箱
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="email_get2?e=get2">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;垃圾箱
+					</a>
+				</li>
+
+			</ul>
+		</li>
+		<li class="menu-title">
+			<a href="#" >
+				<i class=" fa fa-sitemap"></i>&nbsp;&nbsp;管理员
+			</a>
+		</li>
+		<li class="sub-menu">
+			<ul class="menu">
+				<li>
+					<a target="pageBox" href="notice?nn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;公告管理
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="dept?dn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;部门管理
+					</a>
+				</li>
+
+
+				<li>
+					<a target="pageBox" href="role?rn=show">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;角色管理
+					</a>
+				</li>
+				<li>
+					<a target="pageBox" href="userShow">
+					<i class=" fa fa-star-o"></i>&nbsp;&nbsp;用户管理
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<div class="right-side">
+		<iframe class="admin-img" name="pageBox" src="z1.html">
+			
+		</iframe>
+		<div class="footer">
+			智游教育 ©2018 河南智游臻龙教育科技有限公司
+		</div>
+	</div>
+</div>
+<script src="lib/jquery/jquery.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
